@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Template`,
-    description: `Gatsby configured with Redux, Netlify CMS and SASS with base styles`,
+    title: `Oppenheim Architecture + Design`,
+    description: `Award winning, internationally recognized architecture firm.`,
     author: `@gatsbyjs`,
   },
   plugins: [

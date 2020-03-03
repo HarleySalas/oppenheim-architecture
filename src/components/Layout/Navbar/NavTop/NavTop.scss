@@ -1,7 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 .nav-top {
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
@@ -9,11 +9,12 @@
   width: 100vw;
   display: flex;
   align-items: center;
+  background-color: rgba($color-black, 1);
 
   &__container {
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__ul {
@@ -25,7 +26,9 @@
   &__li {
     color: $color-white;
     margin-right: 3rem;
-    font-weight: 400;
+    font-weight: 300;
+    font-size: 1.7rem;
+    cursor: pointer;
 
     &:nth-last-of-type(1) {
       margin-right: 0;
@@ -34,5 +37,45 @@
 
   &__link {
     position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.5rem;
+      width: 100%;
+      height: 1px;
+      background-color: rgba($color-white, 0.72);
+      transform-origin: 100% 0%;
+      transform: scaleX(0);
+      transition: transform 0.24s $ease;
+    }
+
+    &:hover {
+      &::after {
+        transform-origin: 0 100%;
+        transform: scaleX(1);
+        transition: transform 0.42s $ease;
+      }
+    }
+
+    &.active {
+      &::after {
+        transform-origin: 0 100%;
+        transform: scaleX(1);
+        transition: transform 0.42s $ease;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    float: left;
+    fill: $color-white;
+    height: 4rem;
+  }
+
+  &__logo-link {
   }
 }

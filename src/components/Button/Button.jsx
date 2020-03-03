@@ -7,6 +7,7 @@ const Button = props => {
     button
     ${props.btnStyle === "primary" && "button--primary"}
     ${props.btnStyle === "black" && "button--black"}
+    ${props.btnStyle === "white-outline" && "button--white-outline"}
     ${!props.btnSize && "button--md"}
     ${props.addClass && props.addClass}
   `;

@@ -2,13 +2,13 @@
 
 .home-hero {
   width: 100vw;
-  height: 100vh;
+  height: 85vh;
   position: relative;
   overflow: hidden;
 
   &__img-wrapper {
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
   }
 
   &__img-placeholder {
@@ -17,11 +17,11 @@
 
   &__img-overlay {
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba($color-black, 0.07);
+    background-color: rgba($color-black, 0.18);
     display: flex;
     align-items: center;
     justify-content: center;

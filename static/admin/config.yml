@@ -6,20 +6,32 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog Post" # Used in the UI
+  - name: "news" # Used in routes, e.g., /admin/collections/blog
+    label: "News Post" # Used in the UI
     folder: "content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {
           label: "Layout",
           name: "layout",
           widget: "hidden",
-          default: "blog-post",
+          default: "news-post",
         }
       - { label: "Title", name: "title", widget: "string" }
+      - { 
+          label: "Category",
+          name: "category",
+          widget: "select",
+          default: "News",
+          options: 
+            - { label: "News", value: "news" }
+            - { label: "Press", value: "press" }
+            - { label: "Awards", value: "awards" }
+            - { label: "Event", value: "event" }
+            - { label: "Story", value: "story" }
+        }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Description", name: "description", widget: "markdown" }
       - { label: "Body", name: "body", widget: "markdown" }
+

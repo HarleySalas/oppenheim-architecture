@@ -10,11 +10,13 @@ import Layout from "../components/Layout/Layout";
 
 import HomeHero from "../components/PageSections/HomePage/HomeHero/HomeHero";
 import HomeTest from "../components/PageSections/HomePage/HomeTest/HomeTest";
+import ContactCTA from "../components/ContactCTA/ContactCTA";
 
 const IndexPage = ({ count, incrementCounter, decrementCounter }) => (
   <Layout>
     <HomeHero />
     <HomeTest />
+    <ContactCTA />
   </Layout>
 );
 

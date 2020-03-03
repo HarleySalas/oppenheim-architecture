@@ -22,6 +22,58 @@
     background-color: $color-black;
   }
 
+  &--white-outline {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px rgba($color-white, 0.72);
+    color: $color-white;
+    vertical-align: middle;
+    transition: color 0.25s $ease;
+    overflow: hidden;
+    border-radius: 2px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      box-sizing: inherit;
+      width: 0;
+      height: 0;
+      border: 1px solid transparent;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      transition: 0.42s $ease;
+
+      &::before,
+      &::after {
+        width: 100%;
+        height: 100%;
+      }
+
+      &::before {
+        border-top-color: $color-white;
+        border-right-color: $color-white;
+        transition: width 0.25s $ease, height 0.42s $ease 0.25s;
+      }
+
+      &::after {
+        border-bottom-color: $color-white;
+        border-left-color: $color-white;
+        transition: border-color 0s $ease, height 0.25s $ease,
+          width 0.42s $ease 0.25s;
+      }
+    }
+  }
   &--md {
     font-size: 1.5rem;
     letter-spacing: 0.24rem;
