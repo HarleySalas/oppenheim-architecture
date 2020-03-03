@@ -2,7 +2,7 @@
 layout: news-post
 title: >-
   Artecasalugano Names Muttenz Water Purification Plant Winner of the Swiss
-  Price for Sustainable Architecture
+  Prize for Sustainable Architecture
 category: awards
 date: 2020-02-26T20:42:09.487Z
 thumbnail: /img/2020.02_artecasalugano.jpg
