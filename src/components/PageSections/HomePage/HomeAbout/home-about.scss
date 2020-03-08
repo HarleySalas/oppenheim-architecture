@@ -1,0 +1,31 @@
+@import "../../../../styles/variables.scss";
+
+.home-about {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1rem 0;
+  flex-direction: column;
+
+  &__img-wrapper {
+    width: 65vw;
+    max-height: 60rem;
+    // float: right;
+  }
+
+  &__container {
+    position: absolute;
+    align-self: center;
+  }
+
+  &__content-wrapper {
+    background-color: $color-white-dark;
+    width: 50rem;
+    padding: 7rem 4rem;
+  }
+
+  &__content {
+    margin-bottom: 7rem !important;
+  }
+}

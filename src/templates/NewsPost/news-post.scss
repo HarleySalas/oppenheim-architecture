@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.news-post {
+  &__header {
+    margin-top: 7rem;
+    height: 60vh;
+    // width: 100vw;
+    position: relative;
+    overflow: hidden;
+
+    &__img-wrapper {
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    &__img-overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding: 3rem;
+      display: flex;
+      align-items: flex-end;
+      background: linear-gradient(
+        180deg,
+        rgba($color-black, 0) 24%,
+        rgba($color-black, 0.72) 100%
+      );
+    }
+  }
+
+  &__heading {
+    color: $color-white;
+    font-weight: 300;
+  }
+
+  &__content-container {
+    padding: 7rem 0;
+
+    a {
+      color: $color-black;
+      font-weight: 500;
+      border-bottom: 1px solid $color-grey-light;
+      transition: all 0.24s $ease;
+
+      &:hover {
+        color: $color-grey;
+        border-bottom: 1px solid $color-grey;
+      }
+    }
+  }
+}

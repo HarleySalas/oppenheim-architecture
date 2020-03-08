@@ -2,13 +2,13 @@
 
 .home-hero {
   width: 100vw;
-  height: 85vh;
+  height: 80vh;
   position: relative;
   overflow: hidden;
 
   &__img-wrapper {
     width: 100vw;
-    height: 85vh;
+    height: 100vh;
   }
 
   &__img-placeholder {
@@ -17,7 +17,7 @@
 
   &__img-overlay {
     width: 100vw;
-    height: 85vh;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;

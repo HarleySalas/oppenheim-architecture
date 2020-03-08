@@ -1,0 +1,70 @@
+@import "../../styles/variables.scss";
+
+.arrow-link {
+  position: relative;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.24s $ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+    transition: transform 0.24s $ease;
+  }
+
+  &--black {
+    color: $color-grey !important;
+
+    &::after {
+      background-color: $color-black;
+    }
+
+    &:hover {
+      color: $color-black !important;
+
+      .arrow-link__arrow {
+        stroke: $color-black;
+      }
+    }
+  }
+
+  &--white {
+    color: $color-white;
+    background-color: $color-black;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+      transform-origin: 0 100%;
+    }
+  }
+
+  &__arrow {
+    display: block;
+    fill: none;
+    width: 2rem;
+    stroke-width: 0.5rem;
+    margin-left: 1rem;
+    transition: stroke 0.24s $ease;
+
+    &--black {
+      stroke: $color-grey;
+    }
+
+    &--white {
+      stroke: $color-white;
+    }
+  }
+}
