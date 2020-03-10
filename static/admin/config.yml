@@ -4,7 +4,7 @@ backend:
 # This line should *not* be indented
 media_folder: static/img
 public_folder: /img
-
+publish_mode: editorial_workflow
 collections:
   - name: "news" # Used in routes, e.g., /admin/collections/blog
     label: "News Post" # Used in the UI
@@ -16,7 +16,7 @@ collections:
           label: "Layout",
           name: "layout",
           widget: "hidden",
-          default: "news-post",
+          default: "/NewsPost/NewsPost.jsx",
         }
       - { label: "Title", name: "title", widget: "string" }
       - {
@@ -43,7 +43,7 @@ collections:
         }
       - {
           label: "Project Name",
-          name: "projectName",
+          name: "title",
           widget: "string",
           required: true,
         }
