@@ -7,6 +7,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "body-scroll-lock": "^2.6.4",
+    "embla-carousel-react": "^1.2.18",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-google-analytics": "^2.1.36",
@@ -25,6 +26,7 @@
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.3.13",
     "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "netlify-cms-app": "^2.11.26",
     "netlify-lambda": "^1.6.3",
     "node-sass": "^4.13.1",
