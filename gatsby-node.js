@@ -17,7 +17,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async function({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
         edges {
           node {
             fields {
@@ -28,14 +28,19 @@ exports.createPages = async function({ actions, graphql }) {
       }
     }
   `);
-
-  data.allMarkdownRemark.edges.forEach(edge => {
+  const posts = data.allMarkdownRemark.edges;
+  posts.forEach((edge, index) => {
     const slug = edge.node.fields.slug;
 
     actions.createPage({
       path: slug,
       component: require.resolve(`./src/templates/NewsPost/NewsPost.jsx`),
-      context: { slug: slug },
+      context: {
+        slug: slug,
+        next: index === 0 ? null : posts[index - 1].node.fields.slug,
+        prev:
+          index === posts.length - 1 ? null : posts[index + 1].node.fields.slug,
+      },
     });
   });
 };
