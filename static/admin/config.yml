@@ -26,12 +26,76 @@ collections:
           options: ["news", "press", "awards", "event", "story"],
           default: ["news"],
         }
-      # options:
-      #   - { label: "News", value: "news" }
-      #   - { label: "Press", value: "press" }
-      #   - { label: "Awards", value: "awards" }
-      #   - { label: "Event", value: "event" }
-      #   - { label: "Story", value: "story" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "project",
+        }
+      - {
+          label: "Project Name",
+          name: "projectName",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Project Type",
+          name: "projectType",
+          widget: "string",
+          required: true,
+        }
+      - { label: "Scope", name: "scope", widget: "string", required: true }
+      - {
+          label: "Location",
+          name: "location",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          required: true,
+        }
+      - {
+          label: "Selected Works Project?",
+          name: "selectedWork",
+          widget: "boolean",
+          default: false,
+        }
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          [
+            "Hospitality",
+            "Mixed-use",
+            "Multi-family",
+            "Private Home",
+            "Master Planning",
+            "Commercial",
+            "Hospitality",
+          ]
+      - label: "Thumbnail Image"
+        name: "thumbnail"
+        widget: "image"
+        hint: "This image will only be displayed on preview pages. It will not appear on the page. If you wish for this image to be displayed on the project's page, you must also add it to the images field."
+        required: true
+      - label: "Images"
+        hint: "Add all images that you wish to display on the project page."
+        name: "images"
+        widget: "list"
+        field: { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
+      - { label: "Credits", name: "credits", widget: "markdown" }
+      - { label: "Image Credits", name: "imageCredits", widget: "string" }
