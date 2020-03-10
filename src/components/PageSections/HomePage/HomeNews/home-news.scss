@@ -1,6 +1,8 @@
 @import "../../../../styles/variables.scss";
 
 .home-news {
+  margin-bottom: 5rem;
+
   &__container {
     display: grid;
     grid-row-gap: 1rem;

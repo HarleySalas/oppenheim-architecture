@@ -37,10 +37,6 @@ const HomeNews = () => {
   const recentPostTwo = data.allMarkdownRemark.edges[1].node;
   const recentPostThree = data.allMarkdownRemark.edges[2].node;
 
-  useEffect(() => {
-    console.log(data.allMarkdownRemark.edges[0].node);
-  }, []);
-
   return (
     <section className="home-news">
       <div className="container home-news__container">
