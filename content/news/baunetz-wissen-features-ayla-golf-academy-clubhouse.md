@@ -1,10 +1,11 @@
 ---
-layout: news-post
+layout: /NewsPost/NewsPost.jsx
 title: Baunetz Wissen Features Ayla Golf Academy & Clubhouse
 category: press
 date: 2020-02-26T20:52:51.668Z
 thumbnail: /img/2020.02_baunetz-nissen.jpg
 ---
+
 Organically Shaped Concrete Shell As If It Were Growing Out Of The Ground
 
 “In an area that is characterized by desert and barren landscapes, a golf course looks like a place from another world. . . . The contrast to the stony-sandy Arava desert and the surrounding mountain landscape could not be greater.

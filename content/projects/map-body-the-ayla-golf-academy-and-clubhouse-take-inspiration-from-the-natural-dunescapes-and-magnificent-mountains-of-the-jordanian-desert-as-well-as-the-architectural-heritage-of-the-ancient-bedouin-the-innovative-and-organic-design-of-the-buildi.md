@@ -1,9 +1,9 @@
 ---
-layout: project
+layout: /Project/Project.jsx
 projectName: Ayla Golf Academy
-projectType: '13,000 SF Golf Academy, 5,400 SF Comfort Stations'
-scope: 'Architecture, Interior Design'
-location: 'Aqaba, Jordan'
+projectType: "13,000 SF Golf Academy, 5,400 SF Comfort Stations"
+scope: "Architecture, Interior Design"
+location: "Aqaba, Jordan"
 date: 2020-03-10T06:17:26.367Z
 selectedWork: true
 categories:
@@ -34,8 +34,9 @@ credits: >-
   McKeogh, Aleksandra Melion\
 
   Architect of Record: Darb Architects and Engineers
-imageCredits: 'Rory Gardiner, Moh’d Musa'
+imageCredits: "Rory Gardiner, Moh’d Musa"
 ---
+
 The Ayla Golf Academy and Clubhouse take inspiration from the natural dunescapes and magnificent mountains of the Jordanian desert as well as the architectural heritage of the ancient Bedouin. The innovative and organic design of the building forms the iconic core of the Ayla Oasis mixed-use resort development in Aqaba city.
 
 The 13,000 square foot Ayla Golf Academy building is part of the first phase of a 17-square-mile leisure development currently under construction in Aqaba, Jordan. The development encompasses residential apartments, hotel and commercial space, all centered around an 18-hole signature golf course designed by Greg Norman. The Clubhouse will feature retail, dining, lounge, banquet, spa and wellness components; while the Golf Academy includes retail, dining, and indoor/outdoor swing analysis studio components.
