@@ -17,6 +17,13 @@ const ArrowLink = props => {
     ${props.linkStyle === "black" && "arrow-link__arrow--black"}
     ${props.linkStyle === "white" && "arrow-link__arrow--white"}
   `;
+  if (props.backLink) {
+    return (
+      <Link to={props.linkTo} className={linkStyle}>
+        <Arrow className={`${arrowStyle} back-link`} /> {props.linkText}
+      </Link>
+    );
+  }
   return (
     <Link to={props.linkTo} className={linkStyle}>
       {props.linkText} <Arrow className={arrowStyle} />

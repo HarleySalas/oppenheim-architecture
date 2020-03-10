@@ -59,6 +59,12 @@
     margin-left: 1rem;
     transition: stroke 0.24s $ease;
 
+    &.back-link {
+      margin-left: 0;
+      margin-right: 1rem;
+      transform: rotate(180deg);
+    }
+
     &--black {
       stroke: $color-grey;
     }
