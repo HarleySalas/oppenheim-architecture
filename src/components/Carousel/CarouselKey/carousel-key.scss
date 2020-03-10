@@ -1,0 +1,41 @@
+@import "../../../styles/variables.scss";
+
+.carousel-key {
+  position: relative;
+  width: 7rem;
+  height: 0.72rem;
+  margin: 0 1rem;
+  background: transparent;
+  border: 1px solid rgba($color-white, 0.72);
+  cursor: pointer;
+  transition: border 0.24s $ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+    transform: scaleY(0);
+    transform-origin: 0 100%;
+    transition: transform 0.42s $ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    border: 1px solid rgba($color-white, 1);
+  }
+
+  &.is-selected {
+    border: 1px solid rgba($color-white, 1);
+
+    &::before {
+      transform: scaleY(1);
+    }
+  }
+}

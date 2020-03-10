@@ -1,0 +1,43 @@
+@import "../../styles/variables.scss";
+
+.carousel {
+  position: relative;
+
+  &__viewport {
+    overflow: hidden;
+
+    .is-draggable {
+      cursor: move;
+      cursor: grab;
+    }
+
+    .is-dragging {
+      cursor: grabbing;
+    }
+  }
+
+  &__container {
+    display: flex;
+    will-change: transform;
+  }
+
+  &__slide {
+    flex: 0 0 auto;
+    width: 100%;
+    position: relative;
+    counter-increment: embla;
+
+    &__inner {
+      background-color: $color-black;
+      position: relative;
+    }
+  }
+
+  &__keys {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 1rem;
+  }
+}
