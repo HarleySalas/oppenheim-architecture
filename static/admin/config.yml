@@ -39,7 +39,7 @@ collections:
           label: "Layout",
           name: "layout",
           widget: "hidden",
-          default: "project",
+          default: "/Project/Project.jsx",
         }
       - {
           label: "Project Name",
