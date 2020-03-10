@@ -23,6 +23,9 @@ exports.createPages = async function({ actions, graphql }) {
             fields {
               slug
             }
+            frontmatter {
+              layout
+            }
           }
         }
       }
@@ -34,7 +37,9 @@ exports.createPages = async function({ actions, graphql }) {
 
     actions.createPage({
       path: slug,
-      component: require.resolve(`./src/templates/NewsPost/NewsPost.jsx`),
+      component: require.resolve(
+        `./src/templates/${posts[index].node.frontmatter.layout}`
+      ),
       context: {
         slug: slug,
         next: index === 0 ? null : posts[index - 1].node.fields.slug,
