@@ -2,13 +2,18 @@
 
 .home-hero {
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   position: relative;
   overflow: hidden;
 
+  &__carousel-slide {
+    height: 90vh;
+  }
+
   &__img-wrapper {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    background-color: red;
   }
 
   &__img-placeholder {
@@ -16,30 +21,66 @@
   }
 
   &__img-overlay {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba($color-black, 0.18);
+    background-color: rgba($color-black, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   &__container {
+    position: relative;
+  }
+
+  &__cta {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &__location {
+    color: $color-white;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.24rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  &__pin {
+    display: block;
+    height: 2rem;
+    fill: none;
+    stroke: $color-white;
+    stroke-width: 5px;
+    margin-right: 0.72rem;
+    transform: translateY(-10%);
   }
 
   &__heading {
     color: $color-white;
-    font-size: 6.5rem;
+    font-size: 5rem;
     font-weight: 200;
-    margin-bottom: 7rem;
+    margin-bottom: 10rem;
+    max-width: 60%;
+    line-height: 1.2;
   }
 
   &__sub-heading {
     color: $color-white;
-    font-size: 2.5rem;
-    font-weight: 300;
+    font-weight: 400;
+
+    &__title {
+      text-transform: uppercase;
+      font-size: 2.2rem;
+      letter-spacing: 0.11rem;
+      font-weight: 400;
+    }
   }
 }
