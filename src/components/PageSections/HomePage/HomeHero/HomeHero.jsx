@@ -113,7 +113,7 @@ const HomeHero = () => {
                 21,500 SF Private Home
               </span>
               <CircleButton
-                linkTo="/"
+                linkTo="/projects/alpine-oasis/"
                 btnText="View Project"
                 addClass="home-hero__cta"
                 onMouseEnter={() => setCarouselPaused(true)}
@@ -153,7 +153,7 @@ const HomeHero = () => {
                 650 Acre Destination Spa and Resort
               </span>
               <CircleButton
-                linkTo="/"
+                linkTo="/projects/destination-spa-resort/"
                 btnText="View Project"
                 addClass="home-hero__cta"
                 onMouseEnter={() => setCarouselPaused(true)}
