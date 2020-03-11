@@ -41,7 +41,7 @@ const HomeHero = () => {
 
   return (
     <header className="home-hero">
-      <Carousel delayLength={7000} autoplay paused={carouselPaused}>
+      <Carousel delayLength={7000} autoplay paused={carouselPaused} keys>
         <div className="home-hero__carousel-slide">
           <Img
             fluid={data.img1.childImageSharp.fluid}
@@ -73,7 +73,7 @@ const HomeHero = () => {
                 13,000 SF Golf Academy, 5,400 SF Comfort Stations
               </span>
               <CircleButton
-                linkTo="/"
+                linkTo="/projects/ayla-golf-academy"
                 btnText="View Project"
                 addClass="home-hero__cta"
                 onMouseEnter={() => setCarouselPaused(true)}

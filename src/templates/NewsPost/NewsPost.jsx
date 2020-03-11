@@ -13,7 +13,7 @@ const BlogPost = ({ data }) => {
     console.log(data);
   }, []);
   return (
-    <Layout>
+    <Layout title={data.current.frontmatter.title}>
       <header className="news-post__header">
         <Img
           fluid={data.current.frontmatter.thumbnail.childImageSharp.fluid}

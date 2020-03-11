@@ -3,9 +3,20 @@ import EmblaCarouselReact from "embla-carousel-react";
 import { useInterval } from "../utils";
 import "./carousel.scss";
 
-import CarouselKey from "./CarouselKey/CarouselKey";
+import {
+  CarouselKey,
+  PrevButton,
+  NextButton,
+} from "./CarouselKey/CarouselButtons";
 
-const Carousel = ({ autoplay, delayLength, paused, children }) => {
+const Carousel = ({
+  autoplay,
+  delayLength,
+  paused,
+  children,
+  keys,
+  arrows,
+}) => {
   const [embla, setEmbla] = useState(null);
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -83,15 +94,23 @@ const Carousel = ({ autoplay, delayLength, paused, children }) => {
             ))}
           </div>
         </EmblaCarouselReact>
-        <div className="carousel__keys">
-          {scrollSnaps.map((snap, index) => (
-            <CarouselKey
-              selected={index === selectedIndex}
-              onClick={() => scrollTo(index)}
-              key={index}
-            />
-          ))}
-        </div>
+        {keys && (
+          <div className="carousel__keys">
+            {scrollSnaps.map((snap, index) => (
+              <CarouselKey
+                selected={index === selectedIndex}
+                onClick={() => scrollTo(index)}
+                key={index}
+              />
+            ))}
+          </div>
+        )}
+        {arrows && (
+          <>
+            <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+            <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+          </>
+        )}
       </div>
     </div>
   );

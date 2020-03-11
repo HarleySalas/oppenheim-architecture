@@ -1,0 +1,90 @@
+@import "../../styles/variables.scss";
+
+.project {
+  &__carousel {
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+
+    &__img-wrapper {
+      height: 90vh;
+      width: 100vw;
+    }
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba($color-black, 0) 72%,
+        rgba($color-black, 0.65) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+
+      display: flex;
+      align-items: flex-end;
+
+      &__container {
+      }
+    }
+
+    &__location {
+      color: $color-white;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.24rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    &__pin {
+      display: block;
+      height: 2rem;
+      fill: none;
+      stroke: $color-white;
+      stroke-width: 5px;
+      margin-right: 0.72rem;
+      transform: translateY(-10%);
+    }
+
+    &__title {
+      font-weight: 200;
+      color: $color-white;
+      font-size: 5rem;
+      line-height: 1.2;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    padding: 7rem 0;
+
+    &__half {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
+      color: $color-black;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11rem;
+      font-weight: 400;
+    }
+
+    &__detail {
+      color: $color-grey;
+    }
+  }
+
+  &__content {
+    color: $color-black;
+  }
+}
