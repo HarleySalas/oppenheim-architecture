@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import moment from "moment";
 import "./news-post.scss";
 
 import Layout from "../../components/Layout/Layout";
@@ -36,7 +35,7 @@ const BlogPost = ({ data }) => {
               {data.current.frontmatter.category}
             </span>
             <span className="news-post__info">
-              {moment(data.current.frontmatter.date).format("MMM Do, YYYY")}
+              {data.current.frontmatter.date}
             </span>
           </div>
           <h1 className="news-post__heading">
@@ -122,7 +121,7 @@ export const query = graphql`
       frontmatter {
         title
         category
-        date
+        date(formatString: "MMM. DD, YYYY")
         thumbnail {
           childImageSharp {
             fluid(quality: 100) {
@@ -139,7 +138,6 @@ export const query = graphql`
       frontmatter {
         title
         category
-        date
         thumbnail {
           childImageSharp {
             fluid(quality: 100) {
@@ -148,7 +146,6 @@ export const query = graphql`
           }
         }
       }
-      excerpt
     }
     next: markdownRemark(fields: { slug: { eq: $next } }) {
       fields {
@@ -157,7 +154,6 @@ export const query = graphql`
       frontmatter {
         title
         category
-        date
         thumbnail {
           childImageSharp {
             fluid(quality: 100) {
@@ -166,7 +162,6 @@ export const query = graphql`
           }
         }
       }
-      excerpt
     }
   }
 `;
