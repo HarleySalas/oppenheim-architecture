@@ -2,12 +2,12 @@
 
 .home-hero {
   width: 100vw;
-  height: 90vh;
+  height: 95vh;
   position: relative;
   overflow: hidden;
 
   &__carousel-slide {
-    height: 90vh;
+    height: 95vh;
   }
 
   &__img-wrapper {
@@ -25,14 +25,28 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba($color-black, 0.07);
+    // background-color: rgba($color-black, 0.42);
     display: flex;
     align-items: center;
     justify-content: center;
+    // mix-blend-mode: soft-light;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba($color-black, 0.42);
+      mix-blend-mode: soft-light;
+    }
   }
 
   &__container {
-    position: relative;
+    // position: relative;
+    z-index: 5;
+    position: absolute;
   }
 
   &__cta {
