@@ -1,11 +1,13 @@
 import React from "react";
 
 import Layout from "../components/Layout/Layout";
+import NotFound from "../components/PageSections/NotFound/NotFound";
+import ContactCTA from "../components/ContactCTA/ContactCTA";
 
 const NotFoundPage = () => (
   <Layout title="404: Not found">
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <NotFound />
+    <ContactCTA />
   </Layout>
 );
 
