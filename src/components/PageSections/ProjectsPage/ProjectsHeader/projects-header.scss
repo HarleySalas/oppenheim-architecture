@@ -1,0 +1,88 @@
+@import "../../../../styles/variables.scss";
+
+.projects-header {
+  margin-top: 7rem;
+  padding: 7rem 0 1.5rem 0;
+
+  &__title {
+    font-weight: 300;
+    font-size: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  &__nav {
+    &__ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &__li {
+      color: $color-grey;
+      margin-right: 3rem;
+      font-weight: 500;
+      font-size: 1.2rem;
+      cursor: pointer;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.02rem;
+      line-height: 2.42;
+
+      &::after {
+        content: "/";
+        position: absolute;
+        right: -1.5rem;
+        color: rgba($color-black, 0.24);
+        transform: translateX(50%);
+      }
+
+      &:nth-last-of-type(1) {
+        margin-right: 0;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &__link {
+      position: relative;
+      cursor: pointer;
+      transition: color 0.24s $ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.24rem;
+        width: 100%;
+        height: 1px;
+        background-color: rgba($color-black, 1);
+        transform-origin: 100% 0%;
+        transform: scaleX(0);
+        transition: transform 0.24s $ease;
+      }
+
+      &:hover {
+        color: $color-black;
+
+        &::after {
+          transform-origin: 0 100%;
+          transform: scaleX(1);
+          transition: transform 0.42s $ease;
+        }
+      }
+
+      &.active {
+        color: rgba($color-black, 1);
+
+        &::after {
+          transform-origin: 0 100%;
+          transform: scaleX(1);
+          transition: transform 0.42s $ease;
+        }
+      }
+    }
+  }
+}
