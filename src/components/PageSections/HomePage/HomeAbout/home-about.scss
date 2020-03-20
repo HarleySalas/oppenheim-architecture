@@ -5,9 +5,10 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 1rem 0;
+  padding: 3rem 0;
   flex-direction: column;
   margin: 5rem 0;
+  background-color: $color-white-dark;
 
   &__img-wrapper {
     width: 65vw;
@@ -21,7 +22,7 @@
   }
 
   &__content-wrapper {
-    background-color: $color-white-dark;
+    background-color: $color-white;
     width: 50rem;
     padding: 7rem 4rem;
   }
