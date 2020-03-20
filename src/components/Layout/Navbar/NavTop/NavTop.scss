@@ -21,17 +21,86 @@
     list-style: none;
     display: flex;
     float: right;
+    align-items: center;
   }
 
   &__li {
     color: $color-white;
-    margin-right: 3rem;
+    margin-right: 5rem;
     font-weight: 300;
     font-size: 1.7rem;
     cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
 
     &:nth-last-of-type(1) {
       margin-right: 0;
+    }
+
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      &::after {
+        content: "/";
+        position: absolute;
+        right: -2.5rem;
+        color: rgba($color-white, 0.24);
+        transform: translateX(50%);
+      }
+    }
+
+    &--btn {
+      padding: 0.72rem 1.42rem;
+      box-shadow: inset 0 0 0 1px rgba($color-white, 0.72);
+      color: $color-white;
+      vertical-align: middle;
+      transition: color 0.24s $ease;
+      overflow: hidden;
+      border-radius: 2px;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        box-sizing: inherit;
+        width: 0;
+        height: 0;
+        border: 1px solid transparent;
+      }
+
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        top: 0;
+        left: 0;
+      }
+
+      &:hover {
+        transition: 0.42s $ease;
+
+        &::before,
+        &::after {
+          width: 100%;
+          height: 100%;
+        }
+
+        &::before {
+          border-top-color: $color-white;
+          border-right-color: $color-white;
+          transition: width 0.25s $ease, height 0.42s $ease 0.25s;
+        }
+
+        &::after {
+          border-bottom-color: $color-white;
+          border-left-color: $color-white;
+          transition: border-color 0s $ease, height 0.25s $ease,
+            width 0.42s $ease 0.25s;
+        }
+      }
     }
   }
 
@@ -39,33 +108,103 @@
     position: relative;
     cursor: pointer;
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.5rem;
-      width: 100%;
-      height: 1px;
-      background-color: rgba($color-white, 0.72);
-      transform-origin: 100% 0%;
-      transform: scaleX(0);
-      transition: transform 0.24s $ease;
-    }
-
-    &:hover {
+    &--norm {
       &::after {
-        transform-origin: 0 100%;
-        transform: scaleX(1);
-        transition: transform 0.42s $ease;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.5rem;
+        width: 100%;
+        height: 1px;
+        background-color: rgba($color-white, 0.72);
+        transform-origin: 100% 0%;
+        transform: scaleX(0);
+        transition: transform 0.24s $ease;
+      }
+
+      &:hover {
+        &::after {
+          transform-origin: 0 100%;
+          transform: scaleX(1);
+          transition: transform 0.42s $ease;
+        }
+      }
+
+      &.active {
+        &::after {
+          transform-origin: 0 100%;
+          transform: scaleX(1);
+          transition: transform 0.42s $ease;
+        }
       }
     }
 
-    &.active {
+    &__btn {
+      font-size: 1.5rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.72rem 1.42rem;
+      box-shadow: inset 0 0 0 1px rgba($color-white, 0.72);
+      color: $color-white;
+      vertical-align: middle;
+      transition: color 0.24s $ease;
+      overflow: hidden;
+      border-radius: 2px;
+      cursor: pointer;
+
+      &::before,
       &::after {
-        transform-origin: 0 100%;
-        transform: scaleX(1);
-        transition: transform 0.42s $ease;
+        content: "";
+        position: absolute;
+        box-sizing: inherit;
+        width: 0;
+        height: 0;
+        border: 1px solid transparent;
       }
+
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        top: 0;
+        left: 0;
+      }
+
+      &:hover {
+        transition: 0.42s $ease;
+
+        &::before,
+        &::after {
+          width: 100%;
+          height: 100%;
+        }
+
+        &::before {
+          border-top-color: $color-white;
+          border-right-color: $color-white;
+          transition: width 0.25s $ease, height 0.42s $ease 0.25s;
+        }
+
+        &::after {
+          border-bottom-color: $color-white;
+          border-left-color: $color-white;
+          transition: border-color 0s $ease, height 0.25s $ease,
+            width 0.42s $ease 0.25s;
+        }
+      }
+    }
+
+    &__arrow {
+      // display: block;
+      fill: none;
+      height: 1.7rem;
+      margin-left: 0.72rem;
+      stroke: $color-white;
+      stroke-width: 4px;
     }
   }
 

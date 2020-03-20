@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import "./NavTop.scss";
 
 import Logo from "../../../../shared/oa-logo.svg";
+import Arrow from "../../../../shared/icons/arrow-stroke-01.svg";
 
 const NavTop = () => {
   return (
@@ -15,8 +16,9 @@ const NavTop = () => {
           <li className="nav-top__li">
             <Link
               to="/projects"
-              className="nav-top__link"
+              className="nav-top__link nav-top__link--norm"
               activeClassName="active"
+              partiallyActive={true}
             >
               Projects
             </Link>
@@ -24,14 +26,18 @@ const NavTop = () => {
           <li className="nav-top__li">
             <Link
               to="/company"
-              className="nav-top__link"
+              className="nav-top__link nav-top__link--norm"
               activeClassName="active"
             >
               Company
             </Link>
           </li>
           <li className="nav-top__li">
-            <Link to="/news" className="nav-top__link" activeClassName="active">
+            <Link
+              to="/news"
+              className="nav-top__link nav-top__link--norm"
+              activeClassName="active"
+            >
               News
             </Link>
           </li>
@@ -41,7 +47,10 @@ const NavTop = () => {
               className="nav-top__link"
               activeClassName="active"
             >
-              Contact
+              <div className="nav-top__link__btn">
+                Contact
+                <Arrow className="nav-top__link__arrow" />
+              </div>
             </Link>
           </li>
         </ul>
