@@ -1,0 +1,20 @@
+@import "../../../styles/variables.scss";
+
+.not-found {
+  height: 60vh;
+  margin-top: 7rem;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+}
