@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import marked from "marked";
 import "./project.scss";
 
 import Layout from "../../components/Layout/Layout";
@@ -11,8 +12,6 @@ import Pin from "../../shared/icons/pin-basic-stroke-01.svg";
 const Project = ({ data }) => {
   const imgArr = data.markdownRemark.frontmatter.images;
   const project = data.markdownRemark;
-
-  console.log(data);
 
   return (
     <Layout title={project.frontmatter.title}>
@@ -39,7 +38,8 @@ const Project = ({ data }) => {
         <div className="project__carousel__overlay">
           <div className="container project__carousel__overlay__container">
             <span className="project__carousel__location">
-              <Pin className="project__carousel__pin" /> Aqaba, Jordan
+              <Pin className="project__carousel__pin" />{" "}
+              {project.frontmatter.location}
             </span>
             <h1 className="project__carousel__title">
               {project.frontmatter.title}
@@ -47,25 +47,44 @@ const Project = ({ data }) => {
           </div>
         </div>
       </header>
-      <div className="container project__container">
-        <div className="project__info">
-          <div className="project__info__half">
-            <span className="project__info__title">Project Type</span>
-            <span className="project__info__detail">
-              {project.frontmatter.projectType}
-            </span>
+      <div className="project__foreground">
+        <div className="container project__container">
+          <div className="project__info">
+            <div className="project__info__half">
+              <span className="project__info__title">Project Type</span>
+              <span className="project__info__detail">
+                {project.frontmatter.projectType}
+              </span>
+            </div>
+            <div className="project__info__half">
+              <span className="project__info__title">Scope</span>
+              <span className="project__info__detail">
+                {project.frontmatter.scope}
+              </span>
+            </div>
           </div>
-          <div className="project__info__half">
-            <span className="project__info__title">Scope</span>
-            <span className="project__info__detail">
-              {project.frontmatter.scope}
-            </span>
+          <div
+            className="project__content"
+            dangerouslySetInnerHTML={{ __html: project.html }}
+          />
+          <div className="project__info">
+            <div className="project__info__half">
+              <span className="project__info__title">Credits</span>
+              <div
+                className="project__info__detail"
+                dangerouslySetInnerHTML={{
+                  __html: marked(project.frontmatter.credits),
+                }}
+              ></div>
+            </div>
+            <div className="project__info__half">
+              <span className="project__info__title">Image Credits</span>
+              <span className="project__info__detail">
+                {project.frontmatter.imageCredits}
+              </span>
+            </div>
           </div>
         </div>
-        <div
-          className="project__content"
-          dangerouslySetInnerHTML={{ __html: project.html }}
-        />
       </div>
       <ContactCTA />
     </Layout>
