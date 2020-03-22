@@ -7,7 +7,7 @@ import UnderlineLink from "../../../UnderlineLink/UnderlineLink";
 const NewsCategories = () => {
   return (
     <div className="container news-categories">
-      <span className="news-categories__title">Browse By Category :</span>
+      <span className="news-categories__title">Browse By Category</span>
       <ul className="news-categories__ul">
         <li className="news-categories__li">
           <UnderlineLink linkTo="/news/news">News</UnderlineLink>
