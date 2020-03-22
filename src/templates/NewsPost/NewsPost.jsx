@@ -41,6 +41,7 @@ const BlogPost = ({ data }) => {
           <h1 className="news-post__heading">
             {data.current.frontmatter.title}
           </h1>
+          <hr className="news-post__hr" />
           <div
             dangerouslySetInnerHTML={{
               __html: data.current.html,

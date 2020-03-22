@@ -49,8 +49,16 @@
   &__heading {
     color: $color-black;
     font-weight: 300;
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
     font-size: 3.5rem;
+  }
+
+  &__hr {
+    background-color: $color-grey-light;
+    height: 1px;
+    border: none;
+    margin-bottom: 5rem;
+    opacity: 0.42;
   }
 
   &__content-container {
@@ -95,9 +103,12 @@
     }
 
     &__category {
+      display: block;
       text-transform: uppercase;
       color: $color-grey;
       letter-spacing: 0.11rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
     }
 
     &__title {
