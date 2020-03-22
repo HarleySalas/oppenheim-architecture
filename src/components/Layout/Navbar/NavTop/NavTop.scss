@@ -22,17 +22,17 @@
     display: flex;
     float: right;
     align-items: center;
+    z-index: 5;
   }
 
   &__li {
-    color: $color-white;
     margin-right: 5rem;
-    font-weight: 300;
-    font-size: 1.7rem;
+    font-weight: 400;
+    font-size: 1.5rem;
     cursor: pointer;
     position: relative;
     text-transform: uppercase;
-    letter-spacing: 0.07rem;
+    letter-spacing: 0.11rem;
 
     &:nth-last-of-type(1) {
       margin-right: 0;
@@ -107,8 +107,15 @@
   &__link {
     position: relative;
     cursor: pointer;
+    color: rgba($color-white, 0.72) !important;
+
+    &:hover {
+      color: rgba($color-white, 1) !important;
+    }
 
     &--norm {
+      transition: color 0.24s $ease;
+
       &::after {
         content: "";
         position: absolute;
@@ -130,7 +137,17 @@
         }
       }
 
+      &:hover,
+      &:focus {
+        & + .nav-top__sub-menu {
+          max-height: 21rem;
+          transition: all 0.72s $ease-2;
+        }
+      }
+
       &.active {
+        color: rgba($color-white, 1) !important;
+
         &::after {
           transform-origin: 0 100%;
           transform: scaleX(1);
@@ -147,11 +164,10 @@
       justify-content: center;
       padding: 0.72rem 1.42rem;
       box-shadow: inset 0 0 0 1px rgba($color-white, 0.72);
-      color: $color-white;
       vertical-align: middle;
       transition: color 0.24s $ease;
       overflow: hidden;
-      border-radius: 2px;
+      border-radius: 1px;
       cursor: pointer;
 
       &::before,
@@ -216,5 +232,84 @@
   }
 
   &__logo-link {
+  }
+
+  &__sub-menu {
+    position: absolute;
+    top: 2.1rem;
+    background-color: $color-black;
+    // height: 0px;
+    transition: all 0.42s $ease-2;
+    padding: 0rem 3rem 0 3rem;
+    transform: translateX(-3rem);
+    cursor: initial;
+    max-height: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    &:hover,
+    &:focus {
+      max-height: 21rem;
+    }
+
+    &__ul {
+      list-style: none;
+
+      display: flex;
+      flex-direction: column;
+      cursor: initial;
+      height: auto;
+      // overflow: hidden;
+      // pointer-events: none;
+    }
+
+    &__li {
+      line-height: 1;
+      margin-bottom: 2rem;
+      color: rgba($color-white, 0.72);
+
+      &:nth-of-type(1) {
+        margin-top: 2rem;
+      }
+    }
+
+    &__link {
+      position: relative;
+      color: rgba($color-white, 0.72) !important;
+      transition: color 0.24s $ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.5rem;
+        width: 100%;
+        height: 1px;
+        background-color: rgba($color-white, 0.72);
+        transform-origin: 100% 0%;
+        transform: scaleX(0);
+        transition: transform 0.24s $ease;
+      }
+
+      &:hover {
+        color: rgba($color-white, 1) !important;
+
+        &::after {
+          transform-origin: 0 100%;
+          transform: scaleX(1);
+          transition: transform 0.42s $ease;
+        }
+      }
+
+      &.active {
+        color: rgba($color-white, 1) !important;
+
+        &::after {
+          transform-origin: 0 100%;
+          transform: scaleX(1);
+          transition: transform 0.42s $ease;
+        }
+      }
+    }
   }
 }

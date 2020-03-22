@@ -31,6 +31,55 @@ const NavTop = () => {
             >
               Company
             </Link>
+            <div className="nav-top__sub-menu">
+              <ul className="nav-top__sub-menu__ul">
+                <li className="nav-top__sub-menu__li">
+                  <Link
+                    to="/company/about"
+                    className="nav-top__sub-menu__link"
+                    activeClassName="active"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li className="nav-top__sub-menu__li">
+                  <Link
+                    to="/company/team"
+                    className="nav-top__sub-menu__link"
+                    activeClassName="active"
+                  >
+                    Team
+                  </Link>
+                </li>
+                <li className="nav-top__sub-menu__li">
+                  <Link
+                    to="/company/lectures"
+                    className="nav-top__sub-menu__link"
+                    activeClassName="active"
+                  >
+                    Lectures
+                  </Link>
+                </li>
+                <li className="nav-top__sub-menu__li">
+                  <Link
+                    to="/company/awards"
+                    className="nav-top__sub-menu__link"
+                    activeClassName="active"
+                  >
+                    Awards
+                  </Link>
+                </li>
+                <li className="nav-top__sub-menu__li">
+                  <Link
+                    to="/company/careers"
+                    className="nav-top__sub-menu__link"
+                    activeClassName="active"
+                  >
+                    Careers
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </li>
           <li className="nav-top__li">
             <Link
