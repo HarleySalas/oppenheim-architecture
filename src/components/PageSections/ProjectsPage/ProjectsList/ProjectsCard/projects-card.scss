@@ -30,7 +30,7 @@
 
     .projects-card__btn__circle--top {
       stroke-dashoffset: 0;
-      transition: all 0.72s $ease-2 0.42s;
+      transition: all 0.72s $ease-2 0.24s;
     }
   }
 
@@ -153,7 +153,8 @@
     display: flex;
     align-items: center;
     line-height: 1;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 400;
     text-transform: uppercase;
   }
 
@@ -162,12 +163,13 @@
     height: 1.7rem;
     fill: none;
     stroke: $color-grey;
-    stroke-width: 5px;
+    stroke-width: 6px;
     margin-right: 0.5rem;
   }
 
   &__title {
     font-weight: 400;
     font-size: 2rem;
+    color: $color-black;
   }
 }
