@@ -74,9 +74,10 @@
 
   &__text {
     color: rgba($color-white, 0.72);
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.24rem;
+    font-weight: 400;
     transition: color 0.24s $ease;
     text-align: center;
   }
